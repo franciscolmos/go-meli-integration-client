@@ -1,0 +1,32 @@
+.link{
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+    height: 50px
+}
+.button{
+    background-color: rgb(255,230,0);
+    height: 50px;
+    border: black solid 2.5px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.div{
+    margin-top: 25vh;
+    text-align: center;
+}
+
+h1{
+    margin: auto;
+    text-align: center;
+}
+
+.container{
+    margin: 0%;
+    background-color: rgb(235,235,235);
+    width: 100vw;
+    height: 100vh;;
+}

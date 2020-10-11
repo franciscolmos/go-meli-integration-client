@@ -46,21 +46,21 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
-import { NavbarComponent } from './modules/shared/navbar/navbar.component';
-import { HeaderComponent } from './modules/shared/header/header.component';
-import { SalesComponent } from './modules/shared/sales/sales.component';
-import { QuestionsComponent } from './modules/shared/questions/questions.component'
+
+import { HeaderComponent } from './modules/shared/components/header/header.component'
+import { FooterComponent } from './modules/shared/components/footer/footer.component'
+import { routing } from './app.routing';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     HeaderComponent,
-    SalesComponent,
-    QuestionsComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
+    routing,
     BrowserAnimationsModule,
     A11yModule,
     ClipboardModule,
@@ -105,7 +105,7 @@ import { QuestionsComponent } from './modules/shared/questions/questions.compone
     MatTreeModule,
     OverlayModule,
     PortalModule,
-    ScrollingModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
