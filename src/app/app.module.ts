@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common'
+import { HttpClientModule } from '@angular/common/http'
 
+import { setTheme  } from 'ngx-bootstrap/utils';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {A11yModule} from '@angular/cdk/a11y';
@@ -47,8 +50,13 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 
+import { DashboardComponent } from './modules/dashboard/dashboard.component'
 import { HeaderComponent } from './modules/shared/components/header/header.component'
+import { HomeComponent } from './modules/home/home.component'
 import { FooterComponent } from './modules/shared/components/footer/footer.component'
+import { NavbarComponent } from './modules/shared/components/navbar/navbar.component'
+import { QuestionsComponent } from './modules/shared/components/questions/questions.component'
+import { SalesComponent } from './modules/shared/components/sales/sales.component'
 import { routing } from './app.routing';
 
 
@@ -56,9 +64,16 @@ import { routing } from './app.routing';
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    DashboardComponent,
+    NavbarComponent,
+    QuestionsComponent,
+    SalesComponent,
+    HomeComponent,
   ],
   imports: [
+    HttpClientModule,
+    CommonModule,
     BrowserModule,
     routing,
     BrowserAnimationsModule,
@@ -108,6 +123,10 @@ import { routing } from './app.routing';
     ScrollingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor() {
+    setTheme('bs3'); // or 'bs4'
+  }
+}

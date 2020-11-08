@@ -1,9 +1,11 @@
 .footer{
-    background-color: white;
+    position: absolute;
+    bottom: 0;
+    background-color: #ebebeb;
     height: 100px;
     width: 100%;
 }
 h4{
-    bottom: 0%;
+    margin-top: 50px;
     text-align: center;
 }

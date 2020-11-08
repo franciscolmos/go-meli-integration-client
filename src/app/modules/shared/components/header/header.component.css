@@ -5,3 +5,14 @@
     height: 100px;
     margin-bottom: 0%;
 }
+
+.img{
+    width: 200px;
+    display: inline;
+}
+
+img{
+    margin-top: -50px;
+    width: 200px;
+    height: auto;
+}

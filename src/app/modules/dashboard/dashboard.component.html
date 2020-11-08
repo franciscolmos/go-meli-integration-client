@@ -1,1 +1,15 @@
 
+<h1>ITEMS</h1>
+<div>
+    <div *ngFor="let item of items">{{item | json: spacing}}</div>
+</div>
+<br>
+<h1>VENTAS</h1>
+<div>
+    <div *ngFor="let sale of sales">{{sale | json}}</div>
+</div>
+<br>
+<h1>PREGUNTAS</h1>
+<div>
+    <div *ngFor="let question of questions">{{question | json}}</div>
+</div>
