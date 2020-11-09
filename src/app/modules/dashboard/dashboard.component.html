@@ -1,15 +1,95 @@
 
-<h1>ITEMS</h1>
-<div>
-    <div *ngFor="let item of items">{{item | json: spacing}}</div>
+
+<div class="container">
+    <h1>ITEMS</h1>
+    <table mat-table [dataSource]="dashboard?.Items"  class="mat-elevation-z8">
+        <!-- Columna Nombre -->
+        <ng-container matColumnDef="Title">
+            <th mat-header-cell *matHeaderCellDef class="column"> Nombre </th>
+            <td mat-cell *matCellDef="let element" class="content"> {{element?.Title}} </td>
+        </ng-container>
+    
+        <!-- Columna Cantidad -->
+        <ng-container matColumnDef="Quantity">
+            <th mat-header-cell *matHeaderCellDef class="column"> Cantidad </th>
+            <td mat-cell *matCellDef="let element" class="content"> {{element?.Quantity}} </td>
+        </ng-container>
+    
+        <!-- Columna Precio -->
+        <ng-container matColumnDef="Price">
+            <th mat-header-cell *matHeaderCellDef class="column"> Precio </th>
+            <td mat-cell *matCellDef="let element" class="content"> {{element?.Price}} </td>
+        </ng-container>
+    
+        <!-- Columna Imagen -->
+        <ng-container matColumnDef="FirstPicture">
+            <th mat-header-cell *matHeaderCellDef class="column"> imagen </th>
+            <td mat-cell *matCellDef="let element" class="content"> <img src="{{element?.FirstPicture}}" alt="img"> </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsItems"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsItems;"></tr>
+    </table>
+
+    <br>
+
+    <h1>VENTAS</h1>
+    <table mat-table [dataSource]="dashboard?.Sales_Orders"  class="mat-elevation-z8">
+        <!-- Columna Items -->
+        <ng-container matColumnDef="Sold_Items">
+            <th mat-header-cell *matHeaderCellDef class="column"> Items </th>
+            <td mat-cell *matCellDef="let element" class="content"> {{element?.Sold_Items}} </td>
+        </ng-container>
+
+        <!-- Columna Fecha -->
+        <ng-container matColumnDef="Sale_date">
+            <th mat-header-cell *matHeaderCellDef class="column"> Fecha </th>
+            <td mat-cell *matCellDef="let element" class="content"> {{element?.Sale_date}} </td>
+        </ng-container>
+
+        <!-- Columna Total -->
+        <ng-container matColumnDef="Total">
+            <th mat-header-cell *matHeaderCellDef class="column"> Total </th>
+            <td mat-cell *matCellDef="let element" class="content"> {{element?.Total}} </td>
+        </ng-container>
+
+        <!-- Columna Total + Delivery -->
+        <ng-container matColumnDef="Total_Delivery" >
+            <th mat-header-cell *matHeaderCellDef class="column"> Total + delivery </th>
+            <td mat-cell *matCellDef="let element" class="content"> {{element?.Total_Delivery}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsSalesOrders"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsSalesOrders;"></tr>
+    </table>
+
+    <br>
+
+    <h1>PREGUNTAS</h1>
+    <table mat-table [dataSource]="dashboard?.Unanswered_Questions"  class="mat-elevation-z8">
+        <!-- Columna Fecha -->
+        <ng-container matColumnDef="Question_date">
+            <th mat-header-cell *matHeaderCellDef class="questionsColumn"> Fecha </th>
+            <td mat-cell *matCellDef="let element" class="content"> {{element?.Question_date}} </td>
+        </ng-container>
+
+        <!-- Columna Ariculo -->
+        <ng-container matColumnDef="Title">
+            <th mat-header-cell *matHeaderCellDef class="questionsColumn"> Nombre </th>
+            <td mat-cell *matCellDef="let element" class="content"> {{element?.Title}} </td>
+        </ng-container>
+
+        <!-- Columna Pregunta -->
+        <ng-container matColumnDef="Question_text">
+            <th mat-header-cell *matHeaderCellDef class="questionsColumn"> Pregunta </th>
+            <td mat-cell *matCellDef="let element" class="content"> {{element?.Question_text}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsUnansweredQuestions"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsUnansweredQuestions;"></tr>
+    </table>
 </div>
-<br>
-<h1>VENTAS</h1>
-<div>
-    <div *ngFor="let sale of sales">{{sale | json}}</div>
-</div>
-<br>
-<h1>PREGUNTAS</h1>
-<div>
-    <div *ngFor="let question of questions">{{question | json}}</div>
-</div>
+
+
+
+
