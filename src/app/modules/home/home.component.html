@@ -1,9 +1,10 @@
 <div class="container">
-  <div>
+  <div class="mt-5">
     <h1>Bienvenido a Meli APP !</h1>
   </div>
   <div class="div">
-    <button mat-flat-button color="primary" class="button">
+    <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff159" type = "pacman" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+    <button type="button" class="btn btn-warning">
       <a href="https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=2760149476611182&redirect_uri=http://localhost:4200/dashboard/" class="link">
          Iniciar con Mercado Libre
       </a>

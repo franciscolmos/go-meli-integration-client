@@ -1,0 +1,53 @@
+{
+    "title": "item de prueba",
+    "category_id": "MLA3530",
+    "price": 2960,
+    "currency_id": "ARS",
+    "available_quantity": 20,
+    "buying_mode": "buy_it_now",
+    "condition": "new",
+    "listing_type_id": "gold_special",
+    "description": {
+        "plain_text": "Descripción con Texto Plano \n"
+    },
+    "video_id": "YOUTUBE_ID_HERE",
+    "sale_terms": [
+        {
+            "id": "WARRANTY_TYPE",
+            "value_name": "Garantía del vendedor"
+        },
+        {
+            "id": "WARRANTY_TYPE",
+            "value_name": "90 días"
+        }
+    ],
+    "pictures": [
+        {
+            "source": "http://mla-s2-p.mlstatic.com/968521-MLA20805195516_072016-O.jpg"
+        }
+    ],
+    "attributes": [
+        {
+            "id": "BRAND",
+            "value_name": "Marca del producto"
+        },
+        {
+            "id": "EAN",
+            "value_name": "7898095297749"
+        }
+    ]
+}
+    {
+    "message": "Validation error",
+    "error": "validation_error",
+    "status": 400,
+    "cause": [
+        {
+            "department": "items",
+            "cause_id": 224,
+            "type": "error",
+            "code": "sale_term.duplicated",
+            "references": [
+                "item.sale_terms"
+            ],"mes
+    sage":"Payload contains duplicated sale term WARRANTY_TYPE"}]}
