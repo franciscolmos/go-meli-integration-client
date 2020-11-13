@@ -20,10 +20,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.spinner.show()
-    setTimeout(() => {
-      this.spinner.hide();
-    }, 3000);
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
     console.log(code);
@@ -44,6 +40,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
           return;
       }
       )
+    this.spinner.show()
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
+    
     }
 
   ngOnDestroy() {

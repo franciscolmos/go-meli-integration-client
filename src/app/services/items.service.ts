@@ -27,4 +27,8 @@ export class ItemsService {
   getDashboard( ) {
     return this.httpClient.get(`${this.API_URL}/dashboard`);
   }
+
+  postItem(body){
+    return this.httpClient.post(`${this.API_URL}/post/item`, body)
+  }
 }

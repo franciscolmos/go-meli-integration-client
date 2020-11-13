@@ -25,6 +25,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { MaterialFileInputModule } from 'ngx-material-file-input';
 import { MatIconModule } from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { DashboardComponent } from './modules/dashboard/dashboard.component'
@@ -53,6 +54,7 @@ import { routing } from './app.routing';
     NgxSpinnerModule,
     MaterialFileInputModule,
     MatIconModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     A11yModule,
     ClipboardModule,
