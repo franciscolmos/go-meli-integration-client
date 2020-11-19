@@ -54,9 +54,9 @@
     * Ventas realizadas por el mismo.
     * Preguntas sin responder de los items publicados que tengan al menos 1 unidad disponible.
     Items publicados
-    ![Alt text](src\assets\items.png "Request para obtener el Dashboard")
+    ![Items Publicados](src\assets\items.png)
     Ventas y Preguntas sin responder
-    ![Alt text](src\assets\ventasYPreguntas.png "Request para obtener el Dashboard")
+    ![Ventas y Preguntas](src\assets\ventasYPreguntas.png)
 
 
 
