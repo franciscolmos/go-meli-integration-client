@@ -54,9 +54,9 @@
     * Ventas realizadas por el mismo.
     * Preguntas sin responder de los items publicados que tengan al menos 1 unidad disponible.
     Items publicados
-    ![Items Publicados](src\assets\items.png)
+    ![Items Publicados](..\src\assets\items.png)
     Ventas y Preguntas sin responder
-    ![Ventas y Preguntas](src\assets\ventasYPreguntas.png)
+    ![Ventas y Preguntas](..\src\assets\ventasYPreguntas.png)
 
 
 
