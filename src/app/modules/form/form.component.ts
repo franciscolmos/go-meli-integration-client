@@ -15,7 +15,9 @@ export class FormComponent implements OnInit {
   constructor(
     public fb: FormBuilder,
     private itemsService: ItemsService
-  ) { 
+  ) {
+
+    //Estructura del item que enviaremos como body al back para setear en la estructura para enviar a Meli.
     this.item = this.fb.group({
       title : [''],
       quantity: [''],
@@ -35,11 +37,13 @@ export class FormComponent implements OnInit {
     this.item.get('image').updateValueAndValidity()
   }
 
+  //Funcion que se ejecuta cuando se aprieta el boton submit del formulario, y lo que hace es enviar por post el Item que se seteo
+  //con los valores de los inputs del formulario.
   onSubmit() {
     this.itemsService.postItem(JSON.stringify(this.item.value))
     .subscribe(
-      (response) => console.log(response),
-      (error) => console.log(error)
+      (response) => console.log('Respuesta del server: ', response),
+      (error) => console.log('Ha ocurrido un error al publicar el nuevo item: ', error)
     )
   }
 

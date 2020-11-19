@@ -1,34 +1,26 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http'
-
-import { environment } from '../../environments/environment'
+import { HttpClient } from '@angular/common/http'
+import { Observable } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
 })
 export class ItemsService {
-  readonly API_URL = environment.apiUrl;
-
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'text/html',
-      'Access-Control-Allow-Origin' : '*',
-      'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, HEAD, OPTIONS'
-    })
-  }
   constructor(
     private httpClient: HttpClient
   ) { }
 
-  getAccessToken( code ) {
-    return this.httpClient.get(`${this.API_URL}/auth/code?code=${code}`);
+  //Servicios que utilizamos para pegarles a los endpoints de nuestra API en golang
+
+  getAccessToken( code: any ): Observable< any > {
+    return this.httpClient.get< any >(`/api/auth/code?code=${code}`);
   }
 
-  getDashboard( ) {
-    return this.httpClient.get(`${this.API_URL}/dashboard`);
+  getDashboard( ): Observable< any > {
+    return this.httpClient.get<any>(`/api/dashboard`);
   }
 
-  postItem(body){
-    return this.httpClient.post(`${this.API_URL}/post/item`, body)
+  postItem(body: any): Observable< any >{
+    return this.httpClient.post<any>(`/api/post/item`, body)
   }
 }
