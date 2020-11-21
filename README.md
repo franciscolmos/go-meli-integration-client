@@ -58,9 +58,9 @@
     * Ventas realizadas por el mismo.
     * Preguntas sin responder de los items publicados que tengan al menos 1 unidad disponible.
     Items publicados
-    ![Items Publicados](assets/items.png)
+    ![Items Publicados](src\assets\items.png)
     Ventas y Preguntas sin responder
-    ![Ventas y Preguntas](assets/ventasYPreguntas.png)
+    ![Ventas y Preguntas](src\assets\ventasYPreguntas.png)
 * En caso de que las tablas se visualicen vacías, apretar f5 para refrescar la página. Puede ocurrir que las respuesta no llegue en tiempo y forma para cuando se visualiza el dashboard. Esto es un punto a tener en cuenta para corregir.
 * Si quiere publicar un item, colocar en la url:
 ```
