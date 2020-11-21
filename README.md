@@ -58,13 +58,15 @@
     * Ventas realizadas por el mismo.
     * Preguntas sin responder de los items publicados que tengan al menos 1 unidad disponible.
     Items publicados
-    ![Items Publicados](src\assets\items.png)
+    ![Items Publicados](items.png)
     Ventas y Preguntas sin responder
-    ![Ventas y Preguntas](src\assets\ventasYPreguntas.png)
+    ![Ventas y Preguntas](ventasYPreguntas.png)
+* En caso de que las tablas se visualicen vacías, apretar f5 para refrescar la página. Puede ocurrir que las respuesta no llegue en tiempo y forma para cuando se visualiza el dashboard. Esto es un punto a tener en cuenta para corregir.
+* Si quiere publicar un item, colocar en la url:
+```
+    http://localhost:4200/form
+```
+* Completar los 3 inputs y apretar el botón Aceptar.
 
-
-
-## How to solve 'Redirect has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header'?
-
-https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc/related
+* Importante recordar que para obtener el dashboard o publicar un item, es necesario realizar el flujo de OAuth antes. Es decir antes se debe ir al http://localhost:4200/home y apretar el botón Iniciar con Mercado Libre.
 
