@@ -5,7 +5,7 @@ import { ItemsService } from '../../services/items.service'
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
   firstNameAutofilled: boolean;
@@ -29,6 +29,7 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
   uploadFile(event) {
     const file = (event.target as HTMLInputElement).files[0];
     this.item.patchValue({

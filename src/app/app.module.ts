@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NgxSpinnerModule } from "ngx-spinner";
@@ -40,6 +41,7 @@ import { routing } from './app.routing';
     NgxSpinnerModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    MatInputModule,
     routing,
   ],
   providers: [],
