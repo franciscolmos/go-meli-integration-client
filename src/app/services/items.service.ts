@@ -23,4 +23,8 @@ export class ItemsService {
   postItem(body: any): Observable< any >{
     return this.httpClient.post<any>(`/api/post/item`, body)
   }
+
+  answerQuestion(body: any): Observable< any >{
+    return this.httpClient.post<any>(`/api/post/answer`, body)
+  }
 }

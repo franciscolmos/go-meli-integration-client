@@ -19,6 +19,7 @@ import { HeaderComponent } from './modules/shared/components/header/header.compo
 import { HomeComponent } from './modules/home/home.component'
 import { FooterComponent } from './modules/shared/components/footer/footer.component'
 import { FormComponent } from './modules/form/form.component'
+import { AnswerQuestionComponent } from './modules/answer-question/answer-question.component'
 import { routing } from './app.routing';
 
 
@@ -30,6 +31,7 @@ import { routing } from './app.routing';
     DashboardComponent,
     HomeComponent,
     FormComponent,
+    AnswerQuestionComponent
   ],
   imports: [
     HttpClientModule,

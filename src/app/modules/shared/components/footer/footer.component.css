@@ -4,6 +4,16 @@
     height: 100px;
     width: 100%;
 }
+
+.footerAnswer{
+    position: absolute;
+    bottom: 0;
+    padding-top: 10px;
+    background-color: #ebebeb;
+    height: 100px;
+    width: 100%;
+}
+
 h4{
     margin-top: 50px;
     text-align: center;

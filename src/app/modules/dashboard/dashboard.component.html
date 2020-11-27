@@ -1,31 +1,37 @@
 <ngx-spinner bdColor = "rgba(0,0,0,0.91)" size = "large" color = "#fff159" type = "pacman" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
 
-<div class="container" >
+<div class="container mb-5" >
     <h1>ITEMS</h1>
     <div class="mat-elevation-z8">
         <table mat-table [dataSource]="dashboard?.Items">
             <!-- Columna Nombre -->
             <ng-container matColumnDef="Title">
-                <th mat-header-cell *matHeaderCellDef class="column"> Nombre </th>
+                <th mat-header-cell *matHeaderCellDef class="itemsColumn"> Nombre </th>
                 <td mat-cell *matCellDef="let element" class="content"> {{element?.Title}} </td>
             </ng-container>
         
             <!-- Columna Cantidad -->
             <ng-container matColumnDef="Quantity">
-                <th mat-header-cell *matHeaderCellDef class="column"> Cantidad </th>
+                <th mat-header-cell *matHeaderCellDef class="itemsColumn"> Cantidad </th>
                 <td mat-cell *matCellDef="let element" class="content"> {{element?.Quantity}} </td>
             </ng-container>
         
             <!-- Columna Precio -->
             <ng-container matColumnDef="Price">
-                <th mat-header-cell *matHeaderCellDef class="column"> Precio </th>
+                <th mat-header-cell *matHeaderCellDef class="itemsColumn"> Precio </th>
                 <td mat-cell *matCellDef="let element" class="content"> {{element?.Price}} </td>
             </ng-container>
         
             <!-- Columna Imagen -->
             <ng-container matColumnDef="FirstPicture">
-                <th mat-header-cell *matHeaderCellDef class="column"> imagen </th>
+                <th mat-header-cell *matHeaderCellDef class="itemsColumn"> imagen </th>
                 <td mat-cell *matCellDef="let element" class="content"> <img src="{{element?.FirstPicture}}" alt="img"> </td>
+            </ng-container>
+
+             <!-- Columna Ver Item -->
+             <ng-container matColumnDef="ViewItem">
+                <th mat-header-cell *matHeaderCellDef class="itemsColumn"> Ver Publicación </th>
+                <td mat-cell *matCellDef="let element" class="content"> <a href="https://articulo.mercadolibre.com.ar/{{element?.Id}}-{{element?.Title}}" target="_blank">ver en ML</a> </td>
             </ng-container>
         
             <tr mat-header-row *matHeaderRowDef="displayedColumnsItems"></tr>
@@ -39,7 +45,7 @@
     <table mat-table [dataSource]="dashboard?.Sales_Orders"  class="mat-elevation-z8">
         <!-- Columna Items -->
         <ng-container matColumnDef="Sold_Items">
-            <th mat-header-cell *matHeaderCellDef class="column"> Items </th>
+            <th mat-header-cell *matHeaderCellDef class="salesColumn"> Items </th>
             <td mat-cell *matCellDef="let element" class="content">
                 <mat-accordion>
                     <mat-expansion-panel hideToggle>
@@ -66,19 +72,19 @@
 
         <!-- Columna Fecha -->
         <ng-container matColumnDef="Sale_date">
-            <th mat-header-cell *matHeaderCellDef class="column"> Fecha </th>
+            <th mat-header-cell *matHeaderCellDef class="salesColumn"> Fecha </th>
             <td mat-cell *matCellDef="let element" class="content"> {{element?.Sale_date}} </td>
         </ng-container>
 
         <!-- Columna Total -->
         <ng-container matColumnDef="Total">
-            <th mat-header-cell *matHeaderCellDef class="column"> Total </th>
+            <th mat-header-cell *matHeaderCellDef class="salesColumn"> Total </th>
             <td mat-cell *matCellDef="let element" class="content"> {{element?.Total}} </td>
         </ng-container>
 
         <!-- Columna Total + Delivery -->
         <ng-container matColumnDef="Total_Delivery" >
-            <th mat-header-cell *matHeaderCellDef class="column"> Total + delivery </th>
+            <th mat-header-cell *matHeaderCellDef class="salesColumn"> Total + delivery </th>
             <td mat-cell *matCellDef="let element" class="content"> {{element?.Total_Delivery}} </td>
         </ng-container>
 
@@ -106,6 +112,12 @@
         <ng-container matColumnDef="Question_text">
             <th mat-header-cell *matHeaderCellDef class="questionsColumn"> Pregunta </th>
             <td mat-cell *matCellDef="let element" class="content"> {{element?.Question_text}} </td>
+        </ng-container>
+
+        <!-- Columna Para responder Pregunta -->
+        <ng-container matColumnDef="Id">
+            <th mat-header-cell *matHeaderCellDef class="questionsColumn"> Responder </th>
+            <td mat-cell *matCellDef="let element" class="content"><a href="/answer/{{element?.Id}}/{{element?.Question_text}}">Responder pregunta </a></td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumnsUnansweredQuestions"></tr>

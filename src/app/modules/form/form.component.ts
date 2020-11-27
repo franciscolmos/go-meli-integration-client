@@ -21,15 +21,14 @@ export class FormComponent implements OnInit {
     this.item = this.fb.group({
       title : [''],
       quantity: [''],
-      price: [''],
-      image: [null]
+      price: ['']
     })
   }
 
   ngOnInit(): void {
   }
 
-  
+  /*
   uploadFile(event) {
     const file = (event.target as HTMLInputElement).files[0];
     this.item.patchValue({
@@ -37,6 +36,7 @@ export class FormComponent implements OnInit {
     });
     this.item.get('image').updateValueAndValidity()
   }
+  */
 
   //Funcion que se ejecuta cuando se aprieta el boton submit del formulario, y lo que hace es enviar por post el Item que se seteo
   //con los valores de los inputs del formulario.

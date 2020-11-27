@@ -14,9 +14,9 @@ import { MatPaginator } from '@angular/material/paginator';
 export class DashboardComponent implements OnInit, OnDestroy {
 
   //Columnas de las tres tablas que se muestran en el Dashboard
-  displayedColumnsItems: string[] = ['Title', 'Quantity', 'Price', 'FirstPicture'];
+  displayedColumnsItems: string[] = ['Title', 'Quantity', 'Price', 'FirstPicture', 'ViewItem'];
   displayedColumnsSalesOrders: string[] = ['Sold_Items' , 'Sale_date', 'Total', 'Total_Delivery'];
-  displayedColumnsUnansweredQuestions: string[] = ['Question_date', 'Title', 'Question_text',];
+  displayedColumnsUnansweredQuestions: string[] = ['Question_date', 'Title', 'Question_text','Id'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   //Array de subscripciones que utilizaremos para subscribirnos valga la redundancia.
@@ -44,26 +44,25 @@ export class DashboardComponent implements OnInit, OnDestroy {
     .subscribe(
       (token) => {
         console.log('Token Response: ', token)
+        //llamamos el servicio para obtner el dashboard (compuesto de los items publicados por el vendedor, las ventas y las preguntas sin responder 
+        //de cada item).
+        this.itemsService.getDashboard()
+
+        //Nos subscribimos al servicio para poder acceder al response en caso exitoso, o mostrar el error de lo contrario.
+        .subscribe(
+          (dashboard) => {
+            console.log('Dashboard Respones: ', dashboard)
+            //seteamos a nuesta variable dashboard el response del server.
+            this.dashboard =  dashboard;
+          },
+          (errorDashboard) => {
+            console.error('Error al obtener el Dashboard: ',errorDashboard);
+              return;
+          }
+        )
       },
       (errorToken) => {
         console.error('Error al obtener el Token: ', errorToken)
-      }
-    )
-
-    //llamamos el servicio para obtner el dashboard (compuesto de los items publicados por el vendedor, las ventas y las preguntas sin responder 
-    //de cada item).
-    this.itemsService.getDashboard()
-
-    //Nos subscribimos al servicio para poder acceder al response en caso exitoso, o mostrar el error de lo contrario.
-    .subscribe(
-      (dashboard) => {
-        console.log('Dashboard Respones: ', dashboard)
-        //seteamos a nuesta variable dashboard el response del server.
-        this.dashboard =  dashboard;
-      },
-      (errorDashboard) => {
-        console.error('Error al obtener el Dashboard: ',errorDashboard);
-          return;
       }
     )
 

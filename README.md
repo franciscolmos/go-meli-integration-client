@@ -61,7 +61,6 @@
 ![Items Publicados](https://github.com/franciscolmos/go-meli-integration-client/blob/master/src/assets/items.png)
     Ventas y Preguntas sin responder
 ![Ventas y Preguntas](https://github.com/franciscolmos/go-meli-integration-client/blob/master/src/assets/ventasYPreguntas.png)
-* En caso de que las tablas se visualicen vacías, apretar f5 para refrescar la página. Puede ocurrir que las respuesta no llegue en tiempo y forma para cuando se visualiza el dashboard. Esto es un punto a tener en cuenta para corregir.
 * Si quiere publicar un item, colocar en la url:
 ```
     http://localhost:4200/form

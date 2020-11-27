@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+  answer = false
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
+
+  ngOnChanges():void {
+    if(window.location.href.includes("/answer")){
+      console.log("Sdgsdgd")
+      this.answer = true
+    }
+    this.answer = false
+  } 
 
 }
