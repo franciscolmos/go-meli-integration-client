@@ -1,7 +1,7 @@
-import { utf8Encode } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder , FormGroup } from '@angular/forms';
 import { ItemsService } from '../../services/items.service'
+import { Router } from "@angular/router"
 
 @Component({
   selector: 'app-answer-question',
@@ -14,7 +14,8 @@ export class AnswerQuestionComponent implements OnInit {
 
   constructor(
     public fb: FormBuilder,
-    private itemsService: ItemsService
+    private itemsService: ItemsService,
+    private router: Router
   ) { 
     this.answer = this.fb.group({
       question_id   : [''],
@@ -42,8 +43,6 @@ export class AnswerQuestionComponent implements OnInit {
     question = question.replace(/%C3%BA/g, "ú")
     
     this.question = question
-    
-    
   }
 
   onSubmit() {
@@ -53,7 +52,10 @@ export class AnswerQuestionComponent implements OnInit {
     console.log('respuesta: ', this.answer.value)
     this.itemsService.answerQuestion(JSON.stringify(this.answer.value))
     .subscribe(
-      (response) => console.log('Respuesta del server: ', response),
+      (response) => {
+        console.log('Respuesta del server: ', response);
+        this.router.navigate(['dashboard']);
+        },
       (error) => console.log('Ha ocurrido un error al responder la pregunta del item: ', error)
     )
   }

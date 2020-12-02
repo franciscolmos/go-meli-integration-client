@@ -8,6 +8,7 @@ import { AnswerQuestionComponent } from './modules/answer-question/answer-questi
 
 const appRoutes = [
     { path: 'home', component: HomeComponent,  pathMatch: 'full'},
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'dashboard', component: DashboardComponent,  pathMatch: 'full'},
     { path: 'form', component: FormComponent,  pathMatch: 'full'},
     { path: 'answer/:id/:question', component: AnswerQuestionComponent, pathMatch: 'full'}

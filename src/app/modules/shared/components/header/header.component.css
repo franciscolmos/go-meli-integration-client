@@ -11,8 +11,41 @@
     display: inline;
 }
 
+.imgMobile{
+    display: none;
+}
+
 img{
     margin-top: -50px;
     width: 200px;
     height: auto;
+}
+
+a{
+    font-weight: bold;
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    text-decoration: none;
+}
+
+a:hover{
+    color: black;
+}
+
+@media (max-width: 412px) {
+    .img{
+        display: none;
+    }
+    .imgMobile{
+        display: inline;
+        
+    }
+    img{
+        margin-top: 17px;
+        width: 80px;
+        height: auto;
+        margin-left: 35px;
+    }
+
 }

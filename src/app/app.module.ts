@@ -12,6 +12,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 //Componente propios
 import { DashboardComponent } from './modules/dashboard/dashboard.component'
@@ -44,6 +47,9 @@ import { routing } from './app.routing';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatInputModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatExpansionModule,
     routing,
   ],
   providers: [],

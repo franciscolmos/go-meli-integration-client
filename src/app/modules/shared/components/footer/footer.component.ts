@@ -11,14 +11,17 @@ export class FooterComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    if(window.location.href.includes("/answer") ||
+       window.location.href.includes("/form")   ||
+       window.location.href.includes("/home")   ){
+      this.answer = true
+      return
+    }
+    this.answer = false
   }
 
   ngOnChanges():void {
-    if(window.location.href.includes("/answer")){
-      console.log("Sdgsdgd")
-      this.answer = true
-    }
-    this.answer = false
+    
   } 
 
 }

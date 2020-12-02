@@ -2,3 +2,16 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.btn-warning {
+    color: #212529;
+    background-color:rgb(255,241,89);
+    border-color:rgb(255,241,89);
+}
+
+.mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
+    justify-content: center;
+    display: flex;
+    flex-grow: 1;
+    margin-right: 16px;
+}
