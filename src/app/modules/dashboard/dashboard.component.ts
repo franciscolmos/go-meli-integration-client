@@ -103,7 +103,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
             for(let i = 0; i < dashboard['Sales_Orders'].length; i++){
               //formateamos la fecha con la libreria moment.js
               //podemos utilizar este formato: format('Do MMMM YYYY) tambien;
-              let publishDate =  moment(dashboard['Sales_Orders'][i]['Sale_date']).format('Do MMMM YYYY, h:mm:ss a');
+              let publishDate =  moment(dashboard['Sales_Orders'][i]['Sale_date']).format('Do MMMM YYYY');
               dashboard['Sales_Orders'][i]['Sale_date'] = publishDate;
               this.salesOrders.push(dashboard['Sales_Orders'][i])
             }
@@ -111,7 +111,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
             for(let i = 0; i < dashboard['Unanswered_Questions'].length; i++){
               //formateamos la fecha con la libreria moment.js
               //podemos utilizar este formato: format('Do MMMM YYYY);
-              let questionDate = moment(dashboard['Unanswered_Questions'][i]['Question_date']).format('Do MMMM YYYY, h:mm:ss a');
+              let questionDate = moment(dashboard['Unanswered_Questions'][i]['Question_date']).format('Do MMMM YYYY');
               dashboard['Unanswered_Questions'][i]['Question_date'] = questionDate;
               this.unansweredQuestions.push(dashboard['Unanswered_Questions'][i])
             }
