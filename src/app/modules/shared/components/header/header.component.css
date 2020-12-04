@@ -21,6 +21,13 @@ img{
     height: auto;
 }
 
+.imgNavidad{
+    width: 55px;
+    position: absolute;
+    top: 53px;
+    left: 29px;
+}
+
 a{
     font-weight: bold;
     display: flex;
@@ -46,6 +53,10 @@ a:hover{
         width: 80px;
         height: auto;
         margin-left: 35px;
+    }
+
+    .imgNavidad{
+        display: none;
     }
 
 }

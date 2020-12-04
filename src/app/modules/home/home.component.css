@@ -15,11 +15,45 @@
     border-top-right-radius: 15px;
 }
 .div{
-    margin-top: 25vh;
+    margin-top: 18vh;
     text-align: center;
 }
 
 h1{
     margin: auto;
     text-align: center;
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+}
+
+.homeImg{
+    width: 80px;
+}
+
+.description{
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+@media (max-width: 477px){
+    .div{
+        margin-top: 11vh;   
+    }
+}
+
+@media (max-width: 430px){
+    .div{
+        margin-top: 9vh;   
+    }
+}
+
+@media (max-width: 367PX){
+    .div{
+        margin-top: 7vh;   
+    }
 }
