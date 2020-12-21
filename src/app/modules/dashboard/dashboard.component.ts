@@ -104,6 +104,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
               //formateamos la fecha con la libreria moment.js
               //podemos utilizar este formato: format('Do MMMM YYYY) tambien;
               let publishDate =  moment(dashboard['Sales_Orders'][i]['Sale_date']).format('Do MMMM YYYY');
+              let subtotal = dashboard['Sales_Orders'][i]['Sold_Items'][0]['Unit_Price'] * dashboard['Sales_Orders'][i]['Sold_Items'][0]['Sold_Quantity']
+              dashboard['Sales_Orders'][i]['Sold_Items'][0]['Subtotal'] = subtotal
               dashboard['Sales_Orders'][i]['Sale_date'] = publishDate;
               this.salesOrders.push(dashboard['Sales_Orders'][i])
             }
